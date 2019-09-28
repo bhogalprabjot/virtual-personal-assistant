@@ -21,7 +21,7 @@ def wishMe():
     else:
         mytext = "Good Evening!"
 
-    mytext = mytext + (" I am Groot! How may I help you?")
+    mytext = mytext + (" I am Groot, version 1.0,  How may I help you?")
     speak(mytext)
 
 
@@ -72,4 +72,4 @@ if __name__ == "__main__":
 
         elif 'the time' in query:
             strTime = datetime.datetime.now().strftime("%H:%M:%S")
-            speak(f"Sir, the time is {strTime}")        
+            speak(f"Sir, the time is {strTime}")
