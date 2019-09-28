@@ -1,5 +1,6 @@
 import pyttsx3
 import datetime
+import pyaudio
 import speech_recognition as sr
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
@@ -27,15 +28,14 @@ def wishMe():
 def takeCommand():
     r = sr.Recognizer()
     with sr.Microphone() as source:
-        # r.adjust_for_ambient_noise(source) 
+        r.adjust_for_ambient_noise(source)
         print("Listening...")
         r.pause_threshold = 1
-        r.energy_threshold = 100
         audio = r.listen(source)
 
     try:
         print("Recoginzing...")
-        query = r.recognize_google(audio, Language = 'en-in')
+        query = r.recognize_google(audio, language = 'en-in')
         print(f"User said: {query}\n")
 
     except Exception as e:
