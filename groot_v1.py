@@ -54,7 +54,8 @@ if __name__ == "__main__":
             print("Searching wikipedia...")
             query = query.replace("what is", "")
             results = wikipedia.summary(query, sentences=2)
-            speak("According to Wikipedia...")
+            speak("According to Wikipedi...")
+            # speak("Baba Bole...")
             print(results)
             speak(results)
 
