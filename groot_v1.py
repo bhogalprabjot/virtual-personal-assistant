@@ -69,3 +69,7 @@ if __name__ == "__main__":
         elif 'open google' in query:
             print("Opening Google...")
             webbrowser.open_new_tab("https://www.google.com/")
+
+        elif 'the time' in query:
+            strTime = datetime.datetime.now().strftime("%H:%M:%S")
+            speak(f"Sir, the time is {strTime}")        
