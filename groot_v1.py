@@ -50,11 +50,11 @@ def takeCommand():
 if __name__ == "__main__":
     wishMe()
 
-    CLIENT_ACCESS_TOKEN = "7f790c9c5d11467493162773c9196204 "
+    CLIENT_ACCESS_TOKEN = "7f790c9c5d11467493162773c9196204"
     ai = apiai.ApiAI(CLIENT_ACCESS_TOKEN)
-    request = ai.text_request()
-    request.lang = 'en '
-    request.session_id = "<SESSION ID, UNIQUE FOR EACH USER>"
+    groot = ai.text_request()
+    groot.lang = 'en '
+    groot.session_id = "<SESSION ID, UNIQUE FOR EACH USER>"
 
     while True:
         user_query = takeCommand().lower()
@@ -85,8 +85,9 @@ if __name__ == "__main__":
             speak(f"Sir, the time is {strTime}")
 
         else:
-            request.query = user_query
-            response = request.getresponse()
+            groot.query = user_query
+            print(groot.query)
+            response = groot.getresponse()
             obj = json.load(response)
             reply = obj['result']['fulfillment']['speech']
             speak(reply)
